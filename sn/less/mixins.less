@@ -1,0 +1,8 @@
+.adapterMixin(@index) when ( @index > 0){
+  @media (min-width: extract(@adapterDeviceList,@index)){   /*extract 返回列表中指定位置的元素*/
+    html{
+      font-size: @baseFontSize / @psdWidth * extract(@adapterDeviceList,@index);
+    }
+  }
+  .adapterMixin( @index - 1);
+}
